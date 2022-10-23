@@ -5,4 +5,4 @@
     - name: docker installation on nodes
       yum:
       name: docker
-      state: latest
+      state: installed
