@@ -1,8 +1,9 @@
----
 - hosts: rnb
   become: True
   tasks:
-    - name: docker installation on nodes
-      yum:
-      name: docker
-      state: installed
+  - name: Docker
+    command: "yum install docker -y"
+    command: "systemctl enable docker"
+    command: "systemctl start docker"
+    command: "yum install pip -y"
+    command: "pip install docker-py"
