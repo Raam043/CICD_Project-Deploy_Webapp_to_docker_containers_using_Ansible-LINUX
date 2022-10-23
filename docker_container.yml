@@ -3,12 +3,4 @@
   become: True
   tasks:
     - name: Run docker container
-      docker_container:
-        name: myapp
-        image: raam043/tomcat
-        state: started
-        exposed_ports:
-        - "8080"
-        ports:
-        - "8080:8080"
-       
+    command: docker run -d -p 8080:8080 raam043/tomcat:latest
