@@ -7,4 +7,4 @@
     command: "systemctl enable docker"
     command: "systemctl start docker"
     command: "yum install pip -y"
-    command: "pip install docker"
+    command: "pip3 install docker-py"
