@@ -1,1 +1,14 @@
-
+---
+- hosts: rnb
+  become: True
+  tasks:
+    - name: Run docker container
+      docker_container:
+        name: myapp
+        image: raam043/tomcat:latest
+        state: started
+        exposed_ports:
+        - "8080"
+        ports:
+        - "8080:8080"
+       
