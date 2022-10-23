@@ -5,7 +5,7 @@
     - name: Run docker container
       docker_container:
         name: myapp
-        image: raam043/tomcat:latest
+        image: raam043/tomcat
         state: started
         exposed_ports:
         - "8080"
