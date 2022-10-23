@@ -1,0 +1,8 @@
+---
+- hosts: rnb
+  become: True
+  tasks:
+    - name: docker installation on nodes
+      yum:
+      name: docker
+      state: latest
