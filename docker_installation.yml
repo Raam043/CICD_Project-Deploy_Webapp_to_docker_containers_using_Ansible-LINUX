@@ -1,11 +1,16 @@
 ---
-- hosts: rnb
+- name: Install Docker on Amazon linux
+  hosts: rnb
+  become: True
   tasks:
-  - name: Install docker.
-    package:
-      name: docker-ce
-      state: present
-  - name: Start docker service
-    service:
-      name: docker
-      state: started
+    
+     - name: Install Docker
+       yum:
+        name: docker
+        state: latest
+
+     - name: Start & Enable docker
+       systemd:
+         name: docker
+         state: started
+         enabled: yes
