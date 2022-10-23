@@ -1,0 +1,13 @@
+---
+- hosts: rnb
+  become: True
+  tasks:
+    - name: Run docker container
+      docker_container:
+        name: tomcat
+        image: raam043/nginx:latest
+        state: started
+        exposed_ports:
+        - "80"
+        ports:
+        - "80:80"
