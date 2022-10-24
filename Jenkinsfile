@@ -15,7 +15,7 @@ pipeline {
         }
         stage('Docker Image Rename') {
             steps {
-                sh 'docker -t httpd:latest raam043/httpd_project:v2'
+                sh 'docker tag httpd:latest raam043/httpd_project:v2'
             }
         }        
         stage('Docker Container Run') {
