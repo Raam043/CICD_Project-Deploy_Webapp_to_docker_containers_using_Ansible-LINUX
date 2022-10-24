@@ -10,5 +10,5 @@
 
     - name: Coping website to httpd
       copy:
-        src: ./index.html
+        src: index.html
         dest: /var/www/html/:/usr/local/apache2/htdocs/
