@@ -16,6 +16,8 @@
          enabled: yes
 
      - name: Installing packages
+       command: "yum update -y"
+     - name: Installing packages
        command: "pip3 install docker-py"
      - name:  Installing packages
        command: "yum install python"
