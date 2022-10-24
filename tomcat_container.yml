@@ -6,7 +6,7 @@
     - name: Run docker container
       docker_container:
         name: WebServer
-        image: raam043/tomcat:latest
+        image: raam043/tomcat:v2
         state: started
         exposed_ports:
         - "8080"
