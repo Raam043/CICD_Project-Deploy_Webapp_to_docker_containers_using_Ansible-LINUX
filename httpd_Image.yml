@@ -13,4 +13,4 @@
     - name: webpage directory
       copy:
         src: index.html
-        dest: "/usr/local/apache2/htdocs"
+        dest: /usr/local/apache2/htdocs/
