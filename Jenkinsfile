@@ -22,5 +22,14 @@ pipeline {
                 ansiblePlaybook credentialsId: 'Ansi', disableHostKeyChecking: true, installation: 'ansible2', inventory: 'nodes.inv', playbook: 'httpd_Container.yml'
             }
         }
+        stage('Docker Push to Registry') {
+            steps {
+                withCredentials([string(credentialsId: 'Docker-hub-pwd', variable: 'dockerhubpwd')]) {
+                    sh 'docker login -u raam043 -p ${dockhubpwd}'
+                    
+                    sh 'docker push raam043/httpd'
+}
+            }
+        }
     }
 }
