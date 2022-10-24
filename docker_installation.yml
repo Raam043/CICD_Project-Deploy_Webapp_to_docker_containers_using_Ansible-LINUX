@@ -4,6 +4,7 @@
   become: True
   tasks:
      - name: Installing packages
+       command: "yum update -y"
        command: "pip3 install docker-py"
        command: "yum install python"
      - name: Install Docker
