@@ -13,7 +13,11 @@
      - name: Installing docker
        command: "yum install docker -y"
        command: "yum install pip -y"
-
+     - name: docker install
+       package:
+         name: docker
+         state: present
+         
      - name: Starting and enabling docker service
        service:
          name: docker
