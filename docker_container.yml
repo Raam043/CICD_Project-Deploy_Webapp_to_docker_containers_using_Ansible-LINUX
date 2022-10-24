@@ -11,5 +11,3 @@
         - "80"
         ports:
         - "80:80"
-        volumes:
-        - /root/webpage/:/usr/local/apache2/htdocs/
