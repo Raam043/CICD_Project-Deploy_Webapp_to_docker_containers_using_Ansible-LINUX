@@ -5,7 +5,6 @@
   tasks:
      - name: Installing packages
        command: "yum update -y"
-       command: "pip3 install docker"
        command: "pip install docker-py"
      - name: Install Docker
        yum:
