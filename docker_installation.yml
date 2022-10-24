@@ -6,6 +6,8 @@
      - name: Installing packages
        command: "yum update -y"
        command: "pip install docker"
+       command: "python -m pip install – upgrade pip"
+       command: "pip install pandas"
      - name: Install Docker
        yum:
         name: docker
