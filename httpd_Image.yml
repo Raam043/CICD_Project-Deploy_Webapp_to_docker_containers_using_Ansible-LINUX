@@ -11,9 +11,3 @@
         name: httpd
         tag: latest
         source: pull
-        
-
-     - name: Copy website to the host
-       copy:
-         src: index.html
-         dest: /root/webpage
