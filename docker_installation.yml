@@ -15,8 +15,11 @@
          state: started
          enabled: yes
 
-     - name: Installing pip
-       command: "yum install pip -y"
-
-     - name:  Installing pip3
+     - name: Installing packages
        command: "pip3 install docker-py"
+     - name:  Installing packages
+       command: "yum install python"
+     - name:  Installing packages
+       command: "pip install docker"
+     - name:  Installing packages
+       command: "pip install docker-py"
