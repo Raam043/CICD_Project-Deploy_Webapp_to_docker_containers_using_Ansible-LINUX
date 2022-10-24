@@ -13,6 +13,11 @@ pipeline {
                 ansiblePlaybook credentialsId: 'Ansi', disableHostKeyChecking: true, installation: 'ansible2', inventory: 'nodes.inv', playbook: 'httpd_Image.yml'
             }
         }
+        stage('Docker Rename image') {
+            steps {
+                sh 'docker tag httpd raam043/httpd_project:v2'
+            }
+        }
         stage('Docker Image Build') {
             steps {
                 sh 'docker build -t raam043/httpd_project:v2 .'
