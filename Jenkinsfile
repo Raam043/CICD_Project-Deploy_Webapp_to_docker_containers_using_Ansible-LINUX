@@ -13,6 +13,11 @@ pipeline {
                 sh 'docker build -t raam043/httpd_project:v2 .'
             }
         }
+        stage('Docker Image Rename') {
+            steps {
+                sh 'docker -t httpd:latest raam043/httpd_project:v2'
+            }
+        }        
         stage('Docker Container Run') {
             steps {
                 ansiblePlaybook credentialsId: 'Ansi', disableHostKeyChecking: true, installation: 'ansible2', inventory: 'nodes.inv', playbook: 'httpd_Container.yml'
