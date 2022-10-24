@@ -3,8 +3,7 @@
   become: True
   tasks:
     - name: Installing pip
-      command: "pip install docker-py"
-      command: "pip install docker"
+      command: "pip3 install docker-py"
       
     - name: Pull httpd docker image
       docker_image:
