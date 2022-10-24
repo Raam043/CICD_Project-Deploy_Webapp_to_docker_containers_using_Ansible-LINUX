@@ -14,10 +14,7 @@
        command: "yum install docker -y"
        command: "yum install pip -y"
      - name: docker install
-       package:
-         name: docker
-         state: present
-         
+       command: "yum install docker -y"
      - name: Starting and enabling docker service
        service:
          name: docker
