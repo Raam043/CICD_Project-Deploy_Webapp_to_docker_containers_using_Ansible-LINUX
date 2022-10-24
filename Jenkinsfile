@@ -8,6 +8,11 @@ pipeline {
             }
         }
 
+        stage('Docker Image Pull') {
+            steps {
+                ansiblePlaybook credentialsId: 'Ansi', disableHostKeyChecking: true, installation: 'ansible2', inventory: 'nodes.inv', playbook: 'httpd_Image.yml'
+            }
+        }
         stage('Docker Image Build') {
             steps {
                 sh 'docker build -t raam043/httpd_project:v2 .'
