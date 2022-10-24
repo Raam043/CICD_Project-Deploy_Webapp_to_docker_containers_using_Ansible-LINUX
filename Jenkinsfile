@@ -25,7 +25,7 @@ pipeline {
         stage('Docker Push to Registry') {
             steps {
                 withCredentials([string(credentialsId: 'Docker-hub-pwd', variable: 'dockerhubpwd')]) {
-                    sh 'docker login -u raam043 -p ${dockhubpwd}'
+                    sh 'docker login -u raam043 -p ${dockerhubpwd}'
                     
                     sh 'docker push raam043/httpd'
 }
