@@ -2,12 +2,17 @@
 - hosts: rnb
   become: True
   tasks:
-    - name: Run docker container
-      docker_container:
-        name: tomcat
-        image: raam043/nginx:latest
-        state: started
-        exposed_ports:
-        - "80"
-        ports:
-        - "80:80"
+    - name: webpage directory
+      file:
+        state: directory
+        dest: "/root/webpage"
+    - name: Pull httpd docker image
+      docker_image:
+        name: httpd
+        tag: latest
+        source: pull
+
+    - name: Copy website to the host
+      copy:
+        src: ./index.html
+        dest: /root/webpage
