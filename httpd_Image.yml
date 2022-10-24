@@ -1,10 +1,7 @@
 ---
 - hosts: rnb
   become: True
-  tasks:
-    - name: Installing pip
-      command: "pip3 install docker-py"
-      
+  tasks:    
     - name: Pull httpd docker image
       docker_image:
         name: httpd
