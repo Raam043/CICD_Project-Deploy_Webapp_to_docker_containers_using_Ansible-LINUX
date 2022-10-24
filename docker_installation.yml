@@ -6,7 +6,6 @@
      - name: Installing packages
        command: "pip3 install docker-py"
        command: "yum install python"
-       command: "pip install docker"
      - name: Install Docker
        yum:
         name: docker
