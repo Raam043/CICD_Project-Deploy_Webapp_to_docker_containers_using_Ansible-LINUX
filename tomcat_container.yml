@@ -13,4 +13,4 @@
         ports:
         - "8080:8080"
         volumes:
-        - /root/webpage/:/usr/local/tomcat/webapps
+        - /root/webpage/:/usr/local/tomcat/webapps/RRR
