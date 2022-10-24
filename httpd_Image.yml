@@ -11,6 +11,4 @@
     - name: docker rename
       command: "docker tag httpd:latest raam043/httpd_project:v2"
     - name: webpage directory
-      copy:
-        src: index.html
-        dest: /usr/local/apache2/htdocs/
+      command: cp index.html /usr/local/apache2/htdocs
