@@ -1,3 +1,3 @@
-FROM raam043/httpdimage:latest
+FROM httpd
 MAINTAINER ramesh
 COPY index.html /usr/local/apache2/htdocs
