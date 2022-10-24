@@ -14,3 +14,7 @@
          name: docker
          state: started
          enabled: yes
+      - name: Pip install
+       yum:
+        name: pip3
+        state: docker-py
