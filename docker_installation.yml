@@ -11,7 +11,7 @@
          gpgcheck: no
 
      - name: Installing docker
-       command: " yum install docker -y"
+       command: "yum install docker -y"
        command: "yum install pip -y"
 
      - name: Starting and enabling docker service
