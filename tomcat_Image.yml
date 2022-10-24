@@ -12,7 +12,7 @@
         tag: latest
         source: pull
     - name: docker rename
-      command: "docker tag tomcat:latest raam043/tomcat:v2"
+      command: "docker tag tomcat:latest raam043/tomcat:latest"
     - name: Copy website to the host
       copy:
         src: ./index.html
