@@ -5,7 +5,7 @@
   tasks:
      - name: Installing packages
        command: "yum update -y"
-       command: "pip install ‘docker==4.4.4’"
+       command: "pip3 install docker"
      - name: Install Docker
        yum:
         name: docker
