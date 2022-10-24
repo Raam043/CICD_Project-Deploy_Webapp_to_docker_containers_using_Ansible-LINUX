@@ -13,4 +13,4 @@
         ports:
         - "80:80"
         volumes:
-        - /root/webpage/:/var/www/html/
+        - /root/webpage/:/usr/share/nginx/html
