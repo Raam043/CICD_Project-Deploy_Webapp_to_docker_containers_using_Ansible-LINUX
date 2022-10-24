@@ -6,7 +6,7 @@
     - name: Run docker container
       docker_container:
         name: WebServer
-        image: raam043/httpd:latest
+        image: raam043/httpdimage:latest
         state: started
         exposed_ports:
         - "80"
