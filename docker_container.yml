@@ -4,10 +4,12 @@
   tasks:
     - name: Run docker container
       docker_container:
-        name: tomcat
-        image: raam043/tomcat:latest
+        name: WebServer
+        image: httpd:latest
         state: started
         exposed_ports:
-        - "8080"
+        - "80"
         ports:
-        - "8080:8080"
+        - "80:80"
+        volumes:
+        - /root/webpage/:/usr/local/apache2/htdocs/
