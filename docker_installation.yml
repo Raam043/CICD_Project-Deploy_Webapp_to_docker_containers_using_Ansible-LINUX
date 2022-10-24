@@ -16,5 +16,5 @@
          enabled: yes
       - name: Pip install
        yum:
-        name: pip3
+        name: python3
         state: latest
