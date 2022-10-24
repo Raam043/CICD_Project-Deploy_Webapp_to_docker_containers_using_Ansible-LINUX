@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     stages {
-        stage('Gity Checkout') {
+        stage('Git Checkout') {
             steps {
                 git branch: 'main', url: 'https://github.com/Raam043/CICD_Project-Deploy_Webapp_to_docker_containers_using_Ansible-LINUX.git'
             }
