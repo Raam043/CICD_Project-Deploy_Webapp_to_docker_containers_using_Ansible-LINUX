@@ -1,0 +1,16 @@
+---
+- hosts: rnb
+  become: True
+  tasks:
+  
+    - name: Run docker container
+      docker_container:
+        name: WebServer
+        image: raam043/nginx_project:latest
+        state: started
+        exposed_ports:
+        - "80"
+        ports:
+        - "80:80"
+        volumes:
+        - /root/webpage/:/var/www/html/
