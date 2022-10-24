@@ -23,7 +23,7 @@ pipeline {
             steps {
                 withCredentials([string(credentialsId: 'Docker-hub-pwd', variable: 'dockerhubpwd')]) {
                     sh 'docker login -u raam043 -p ${dockerhubpwd}'
-                    sh 'docker push raam043/httpd_project:v2'
+                    sh 'docker push raam043/httpd_project:latest'
 }
             }
         }
