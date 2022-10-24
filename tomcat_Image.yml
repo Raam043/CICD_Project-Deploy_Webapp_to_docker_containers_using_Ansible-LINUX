@@ -17,3 +17,6 @@
       copy:
         src: ./index.html
         dest: /root/webpage
+    - name: adding file to host
+      volumes:
+      - /root/webpage/:/usr/share/nginx/html
