@@ -1,3 +1,3 @@
 FROM httpd
 MAINTAINER ramesh
-COPY index.html /var/www/html
+COPY index.html /apache2/htdocs
