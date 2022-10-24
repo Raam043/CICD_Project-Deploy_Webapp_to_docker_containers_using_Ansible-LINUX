@@ -15,6 +15,4 @@
          state: started
          enabled: yes
       - name: Pip install
-       yum:
-        name: python3
-        state: latest
+        command: "pip3 install docker-py"
