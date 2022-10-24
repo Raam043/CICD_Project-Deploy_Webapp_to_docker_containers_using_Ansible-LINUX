@@ -11,3 +11,5 @@
         name: httpd
         tag: latest
         source: pull
+    - name: docker rename
+      command: "docker tag httpd:latest raam043/httpd_project:v2"
