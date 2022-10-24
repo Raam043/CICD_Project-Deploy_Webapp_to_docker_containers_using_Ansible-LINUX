@@ -4,8 +4,8 @@
   tasks:
     - name: webpage directory
       file:
-        state: directory
-        dest: "/root/webpage"
+        state: index.html
+        dest: "/usr/local/apache2/htdocs"
     - name: Pull httpd docker image
       docker_image:
         name: httpd
