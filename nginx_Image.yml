@@ -6,13 +6,13 @@
       file:
         state: directory
         dest: "/root/webpage"
-    - name: Pull httpd docker image
+    - name: Pull nginx docker image
       docker_image:
         name: nginx
         tag: latest
         source: pull
     - name: docker rename
-      command: "docker tag httpd:latest raam043/nginx_project:latest"
+      command: "docker tag nginx:latest raam043/nginx_project:latest"
     - name: Copy website to the host
       copy:
         src: ./index.html
