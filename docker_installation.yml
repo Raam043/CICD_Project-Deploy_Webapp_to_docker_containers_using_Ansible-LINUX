@@ -4,15 +4,26 @@
   become: True
   tasks:
      - name: Installing packages
-       command: "yum update -y"
-       command: "pip install 'docker==4.4.4'"
-     - name: Install Docker
-       yum:
-        name: docker
-        state: latest
+       yum_repository:
+         name: docker
+         description: repo for docker
+         baseurl: https://download.docker.com/linux/centos/7/x86_64/stable/
+         gpgcheck: no
 
-     - name: Start & Enable docker
-       systemd:
+     - name: Installing docker
+       command: " yum install docker -y"
+
+     - name: Starting and enabling docker service
+       service:
          name: docker
          state: started
          enabled: yes
+
+     - name: install python3
+       package:
+         name: python3
+         state: present
+
+     - name: conf pip for docker
+       pip:
+         name: docker-py
