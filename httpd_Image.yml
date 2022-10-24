@@ -3,6 +3,8 @@
   become: True
   tasks:
     - name: Pull httpd docker image
+      command: "pip install docker-py"
+      command: "pip install docker"
       docker_image:
         name: httpd
         tag: latest
