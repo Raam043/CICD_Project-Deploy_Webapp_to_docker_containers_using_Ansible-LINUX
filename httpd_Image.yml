@@ -15,5 +15,5 @@
 
      - name: Copy website to the host
        copy:
-         src: ./index.html
+         src: index.html
          dest: /root/webpage
