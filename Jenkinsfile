@@ -12,9 +12,14 @@ pipeline {
                 ansiblePlaybook credentialsId: 'Ansi', disableHostKeyChecking: true, installation: 'ansible2', inventory: 'nodes.inv', playbook: 'docker_installation.yml'
             }
         }
-        stage('Docker Image Build') {
+        stage('Docker Image Pull') {
             steps {
                 ansiblePlaybook credentialsId: 'Ansi', disableHostKeyChecking: true, installation: 'ansible2', inventory: 'nodes.inv', playbook: 'httpd_Image.yml'
+            }
+        }
+        stage('Docker Image Build') {
+            steps {
+                sh 'docker build -t raam043/httpdimage:latest'
             }
         }
         stage('Docker Container Run') {
@@ -26,7 +31,6 @@ pipeline {
             steps {
                 withCredentials([string(credentialsId: 'Docker-hub-pwd', variable: 'dockerhubpwd')]) {
                     sh 'docker login -u raam043 -p ${dockerhubpwd}'
-                    sh 'docker commit image_id=raam043/httpdimage:latest'
                     sh 'docker push raam043/httpdimage'
 }
             }
