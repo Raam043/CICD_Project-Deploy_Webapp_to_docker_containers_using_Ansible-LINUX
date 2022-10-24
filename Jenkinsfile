@@ -8,9 +8,9 @@ pipeline {
             }
         }
 
-        stage('Docker Image Build') {
+        stage('Docker Image Pull') {
             steps {
-                sh 'docker build -t newapp .'
+                ansiblePlaybook credentialsId: 'Ansi', disableHostKeyChecking: true, installation: 'ansible2', inventory: 'nodes.inv', playbook: 'httpd_Image.yml'
             }
         }
       
