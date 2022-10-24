@@ -17,4 +17,4 @@
       - name: Pip install
        yum:
         name: pip3
-        state: docker-py
+        state: latest
