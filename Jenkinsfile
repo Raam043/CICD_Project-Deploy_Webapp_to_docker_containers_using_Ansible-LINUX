@@ -10,7 +10,7 @@ pipeline {
 
         stage('Docker Image Build') {
             steps {
-                sh 'docker build -t raam043/httpd_project:latest .'
+                sh 'docker build -t raam043/httpd_project:${BUILD_NUMBER} .'
             }
         }
         stage('Docker Container Run') {
