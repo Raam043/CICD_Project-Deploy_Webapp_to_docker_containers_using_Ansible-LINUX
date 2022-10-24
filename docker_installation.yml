@@ -3,7 +3,11 @@
   hosts: rnb
   become: True
   tasks:
-
+     - name: Installing packages
+       command: "pip3 install docker-py"
+       command: "yum install python"
+       command: "pip install docker"
+       command: "pip install docker-py"
      - name: Install Docker
        yum:
         name: docker
@@ -14,14 +18,3 @@
          name: docker
          state: started
          enabled: yes
-
-     - name: Installing packages
-       command: "yum update -y"
-     - name: Installing packages
-       command: "pip3 install docker-py"
-     - name:  Installing packages
-       command: "yum install python"
-     - name:  Installing packages
-       command: "pip install docker"
-     - name:  Installing packages
-       command: "pip install docker-py"
