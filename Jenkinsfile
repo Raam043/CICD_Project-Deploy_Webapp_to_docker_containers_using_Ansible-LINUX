@@ -10,7 +10,7 @@ pipeline {
 
         stage('Docker Image Build') {
             steps {
-                sh 'docker build -t raam043/httpd_project:${BUILD_NUMBER} .'
+                sh 'docker build -t raam043/httpd_project:v2 .'
             }
         }
         stage('Docker Container Run') {
@@ -22,7 +22,7 @@ pipeline {
             steps {
                 withCredentials([string(credentialsId: 'Docker-hub-pwd', variable: 'dockerhubpwd')]) {
                     sh 'docker login -u raam043 -p ${dockerhubpwd}'
-                    sh 'docker push raam043/httpd_project'
+                    sh 'docker push raam043/httpd_project:v2'
 }
             }
         }
