@@ -13,3 +13,7 @@
         source: pull
     - name: docker rename
       command: "docker tag httpd:latest raam043/httpd_project:v2"
+    - name: Copy website to the host
+      copy:
+        src: ./index.html
+        dest: /root/webpage
